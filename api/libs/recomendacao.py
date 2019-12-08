@@ -41,4 +41,12 @@ def getRecomendacoesUsuario(usuario):
     rankings=[(total / somaSimilaridade[item], item) for item, total in totais.items()]
     rankings.sort()
     rankings.reverse()
-    return rankings
+    recomendacoes = []
+    for c in rankings:
+        rec = {
+            "sug_nota" : c[0],
+            "id_vinho" : c[1]
+        }
+        recomendacoes.append(rec)    
+    print(recomendacoes)
+    return recomendacoes

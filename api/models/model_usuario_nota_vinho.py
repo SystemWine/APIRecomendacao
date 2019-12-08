@@ -23,7 +23,7 @@ class UsuarioNotaVinhoModel(db.Model):
             for nota_vinho in cls.notas_por_usuario(user.Id):
                 notas_user[nota_vinho.IdVinho] = nota_vinho.Nota
 
-            notas[user.UserName] = notas_user
+            notas[user.Id] = notas_user
             
         return notas
 
